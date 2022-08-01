@@ -4,7 +4,7 @@ import { SectionTitle } from '../SectionTitle';
 
 export const About: React.FC = () => {
   return (
-    <section className="bg-main bg-opacity-10 py-10 px-4 my-16" id="sobre">
+    <section className="bg-main bg-opacity-10 py-10 px-4 my-20" id="sobre">
       <div className="container mx-auto max-w-6xl flex justify-center items-stretch flex-col lg:flex-row gap-10">
         <Image
           src="/images/su.jpg"

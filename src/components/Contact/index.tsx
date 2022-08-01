@@ -5,7 +5,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contato"
-      className="relative container mx-auto max-w-5xl my-16 flex justify-center items-center gap-5  py-10 px-4 min-h-[600px] flex-col-reverse lg:flex-row"
+      className="relative container mx-auto max-w-5xl my-20 flex justify-center items-center gap-5  py-10 px-4 min-h-[600px] flex-col-reverse lg:flex-row"
     >
       <Image
         src="/images/logo.png"

@@ -4,7 +4,7 @@ import { Card } from './Card';
 
 export const Services: React.FC = () => {
   return (
-    <section className="container mx-auto max-w-5xl my-16 px-4" id="servicos">
+    <section className="container mx-auto max-w-5xl my-20 px-4" id="servicos">
       <SectionTitle>Serviços</SectionTitle>
 
       <div className="w-full flex justify-center items-center gap-5 flex-col lg:flex-row">
