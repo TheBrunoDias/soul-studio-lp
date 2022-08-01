@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
           {content.services.map((service, index) => (
             <li key={service}>
               <InView delay={(index + 1) * 500}>
-                <div className='className="flex justify-center lg:justify-start items-center gap-2 my-4"'>
+                <div className="flex justify-center lg:justify-start items-center gap-2 my-4">
                   <CheckIcon />
                   <span className="text-3xl">{service}</span>
                 </div>
