@@ -18,6 +18,7 @@ export const Contact: React.FC = () => {
       <div className="z-10">
         <InView from="down">
           <iframe
+            title="Manoel Ribas, 193, Centro, Telêmaco Borba-PR"
             src={content.map}
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

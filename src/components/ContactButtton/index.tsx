@@ -6,7 +6,10 @@ export const ContactButtton: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className=" bg-main bg-opacity-30 hover:bg-opacity-50 duration-200 rounded-lg text-main px-8 py-2">
+        <button
+          name="Botão Entre em Contato - WhatsApp"
+          className=" bg-main bg-opacity-30 hover:bg-opacity-50 duration-200 rounded-lg text-main px-8 py-2"
+        >
           Entre em Contato
         </button>
       </a>
