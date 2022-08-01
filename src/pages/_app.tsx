@@ -6,7 +6,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Soul Studio</title>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <title>Soul Studio - Aulas de Pilates em Telêmaco Borba</title>
       </Head>
       <Component {...pageProps} />
     </>
