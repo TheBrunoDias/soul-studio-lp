@@ -7,7 +7,7 @@ type Props = {
   delay?: number;
 };
 
-export const InView: React.FC<Props> = ({ children, from = 'down', duration = 1000, delay = 50 }) => {
+export const InView: React.FC<Props> = ({ children, from = 'down', duration = 1000, delay = 150 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -28,7 +28,6 @@ export const InView: React.FC<Props> = ({ children, from = 'down', duration = 10
   const options: IntersectionObserverInit = {
     root: null,
     rootMargin: '0px',
-    threshold: 1,
   };
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export const InView: React.FC<Props> = ({ children, from = 'down', duration = 10
       style={{ transitionDelay: `${delay}ms`, transitionDuration: `${duration}ms` }}
       className={`${
         isVisible ? 'translate-x-0 translate-y-0 opacity-100' : getDirection()
-      } transition  opacity-0 ease-in-out w-full`}
+      } transition opacity-0 ease-in-out w-full animation`}
       ref={containerRef}
     >
       {children}

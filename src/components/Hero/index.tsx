@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
           <ContactButtton />
         </InView>
       </div>
-      <div className="hidden lg:flex justify-center items-center  gap-5 mt-20">
+      <div className="hidden lg:flex justify-center items-center gap-5 mt-20">
         <InView from="down">
           <div className="relative w-[250px] h-[480px] translate-y-[20%] rounded-lg shadow shadow-main">
             <Image

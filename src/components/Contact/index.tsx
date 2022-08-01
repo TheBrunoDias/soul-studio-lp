@@ -16,7 +16,7 @@ export const Contact: React.FC = () => {
         objectFit="contain"
       />
       <div className="z-10">
-        <InView from="top">
+        <InView from="down">
           <iframe
             src={content.map}
             loading="lazy"
@@ -25,7 +25,7 @@ export const Contact: React.FC = () => {
           ></iframe>
         </InView>
       </div>
-      <InView>
+      <InView from="top">
         <div className="flex justify-center items-center flex-col z-10 flex-1">
           <SectionTitle>Contato</SectionTitle>
           <p className="text-2xl leading-10 mb-10 font-thin">{content.text}</p>

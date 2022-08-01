@@ -5,9 +5,9 @@ import { SectionTitle } from '../SectionTitle';
 
 export const About: React.FC = () => {
   return (
-    <section className="bg-main bg-opacity-10 py-10 px-4 my-20" id="sobre">
+    <section className="w-full bg-main bg-opacity-10 py-10 px-4 my-20" id="sobre">
       <div className="container mx-auto max-w-6xl flex justify-center items-stretch flex-col lg:flex-row gap-10">
-        <InView from="left">
+        <InView from="top">
           <Image
             src="/images/su.jpg"
             alt="Suellen Sousa Dias"
@@ -17,7 +17,7 @@ export const About: React.FC = () => {
             className="rounded-lg"
           />
         </InView>
-        <InView from="right">
+        <InView from="top">
           <div className="flex justify-between items-start flex-col">
             <SectionTitle>Sobre</SectionTitle>
             {content.paragraphs.map((p) => (
