@@ -1,4 +1,5 @@
 import { ContactButtton } from '../ContactButtton';
+import { InView } from '../InView';
 import { SectionTitle } from '../SectionTitle';
 import { Card } from './Card';
 
@@ -8,8 +9,10 @@ export const Services: React.FC = () => {
       <SectionTitle>Serviços</SectionTitle>
 
       <div className="w-full flex justify-center items-center gap-5 flex-col lg:flex-row">
-        {content.map((card) => (
-          <Card key={card.title} {...card} />
+        {content.map((card, index) => (
+          <InView key={card.title} delay={(index + 1) * 150}>
+            <Card {...card} />
+          </InView>
         ))}
       </div>
 

@@ -1,28 +1,33 @@
 import Image from 'next/image';
 import { ContactButtton } from '../ContactButtton';
+import { InView } from '../InView';
 import { SectionTitle } from '../SectionTitle';
 
 export const About: React.FC = () => {
   return (
     <section className="bg-main bg-opacity-10 py-10 px-4 my-20" id="sobre">
       <div className="container mx-auto max-w-6xl flex justify-center items-stretch flex-col lg:flex-row gap-10">
-        <Image
-          src="/images/su.jpg"
-          alt="Suellen Sousa Dias"
-          width="500"
-          height="500"
-          objectFit="cover"
-          className="rounded-lg"
-        />
-        <div className="flex justify-between items-start flex-col">
-          <SectionTitle>Sobre</SectionTitle>
-          {content.paragraphs.map((p) => (
-            <p key={p} className="max-w-md sm:my-3">
-              {p}
-            </p>
-          ))}
-          <ContactButtton />
-        </div>
+        <InView from="left">
+          <Image
+            src="/images/su.jpg"
+            alt="Suellen Sousa Dias"
+            width="500"
+            height="500"
+            objectFit="cover"
+            className="rounded-lg"
+          />
+        </InView>
+        <InView from="right">
+          <div className="flex justify-between items-start flex-col">
+            <SectionTitle>Sobre</SectionTitle>
+            {content.paragraphs.map((p) => (
+              <p key={p} className="max-w-md sm:my-3">
+                {p}
+              </p>
+            ))}
+            <ContactButtton />
+          </div>
+        </InView>
       </div>
     </section>
   );

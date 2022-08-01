@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { InView } from '../InView';
 import { SectionTitle } from '../SectionTitle';
 
 export const Contact: React.FC = () => {
@@ -15,31 +16,35 @@ export const Contact: React.FC = () => {
         objectFit="contain"
       />
       <div className="z-10">
-        <iframe
-          src={content.map}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="lg:rounded-lg w-screen lg:w-[500px] h-[500px]"
-        ></iframe>
+        <InView from="top">
+          <iframe
+            src={content.map}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="lg:rounded-lg w-screen lg:w-[500px] h-[500px]"
+          ></iframe>
+        </InView>
       </div>
-      <div className="flex justify-center items-center flex-col z-10 flex-1">
-        <SectionTitle>Contato</SectionTitle>
-        <p className="text-2xl leading-10 mb-10 font-thin">{content.text}</p>
-        <div className="w-full flex justify-center items-center flex-col gap-10">
-          {content.links.map((link) => (
-            <a
-              key={link.label}
-              href={link.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-main flex justify-center items-center gap-2"
-            >
-              <Image src={link.icon} alt={link.label} width={25} height={25} objectFit="contain" />
-              <span>{link.label}</span>
-            </a>
-          ))}
+      <InView>
+        <div className="flex justify-center items-center flex-col z-10 flex-1">
+          <SectionTitle>Contato</SectionTitle>
+          <p className="text-2xl leading-10 mb-10 font-thin">{content.text}</p>
+          <div className="w-full flex justify-center items-center flex-col gap-10">
+            {content.links.map((link) => (
+              <a
+                key={link.label}
+                href={link.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-main flex justify-center items-center gap-2"
+              >
+                <Image src={link.icon} alt={link.label} width={25} height={25} objectFit="contain" />
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
+      </InView>
     </section>
   );
 };

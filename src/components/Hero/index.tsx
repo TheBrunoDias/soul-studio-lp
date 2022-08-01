@@ -1,42 +1,53 @@
 import Image from 'next/image';
 import { ContactButtton } from '../ContactButtton';
+import { InView } from '../InView';
 
 export const Hero: React.FC = () => {
   return (
     <section className="container mx-auto max-w-5xl my-28 lg:my-52 flex justify-between items-center flex-col lg:flex-row gap-10 text-text px-4">
       <div className="max-w-md w-full text-center lg:text-left">
-        <h1 className="font-gotu text-6xl text-main mb-10 leading-[80px]">{content.hero}</h1>
+        <InView>
+          <h1 className="font-gotu text-6xl text-main mb-10 leading-[80px]">{content.hero}</h1>
+        </InView>
         <ul>
-          {content.services.map((service) => (
-            <li key={service} className="flex justify-center lg:justify-start items-center gap-2 my-4">
-              <CheckIcon />
-              <span className="text-3xl">{service}</span>
-            </li>
+          {content.services.map((service, index) => (
+            <InView key={service} delay={(index + 1) * 500}>
+              <li className="flex justify-center lg:justify-start items-center gap-2 my-4">
+                <CheckIcon />
+                <span className="text-3xl">{service}</span>
+              </li>
+            </InView>
           ))}
         </ul>
-        <ContactButtton />
+        <InView delay={1600}>
+          <ContactButtton />
+        </InView>
       </div>
       <div className="hidden lg:flex justify-center items-center  gap-5 mt-20">
-        <div className="relative w-[250px] h-[480px] translate-y-[20%] rounded-lg shadow shadow-main">
-          <Image
-            src={content.image_down}
-            alt="Soul Studio"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-lg"
-          />
-        </div>
-        <div className="relative w-[250px] h-[480px] -translate-y-[20%] rounded-lg shadow shadow-main">
-          <Image
-            src={content.image_top}
-            alt="Soul Studio"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-lg"
-          />
-        </div>
+        <InView from="down">
+          <div className="relative w-[250px] h-[480px] translate-y-[20%] rounded-lg shadow shadow-main">
+            <Image
+              src={content.image_down}
+              alt="Soul Studio"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              className="rounded-lg"
+            />
+          </div>
+        </InView>
+        <InView from="top">
+          <div className="relative w-[250px] h-[480px] -translate-y-[20%] rounded-lg shadow shadow-main">
+            <Image
+              src={content.image_top}
+              alt="Soul Studio"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              className="rounded-lg"
+            />
+          </div>
+        </InView>
       </div>
     </section>
   );
